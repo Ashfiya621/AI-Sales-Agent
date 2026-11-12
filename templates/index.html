@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo Booking Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Twilio Voice Demo</p>
+        <h1>Start a Demo Booking Call</h1>
+        <p class="subtitle">Enter a phone number and trigger an outbound call or simulated webhook flow.</p>
+      </div>
+    </header>
+
+    <main class="card">
+      <label for="phone">Phone number</label>
+      <input id="phone" type="tel" placeholder="+1234567890" autocomplete="tel" />
+      <button id="callButton" class="primary">Call</button>
+
+      <div id="status" class="status">
+        <div class="status-icon hidden" id="spinner"></div>
+        <p id="statusText">Ready to place a call.</p>
+      </div>
+
+      <section class="panel">
+        <h2>Recent bookings</h2>
+        <div id="recentBookings" class="booking-list">
+          <p class="empty-state">No bookings yet.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
